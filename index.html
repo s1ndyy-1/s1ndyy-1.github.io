@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Место силы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Место силы</h1>
+</header>
+
+<section class="gallery">
+    <div class="photo">Фото 1</div>
+    <div class="photo">Фото 2</div>
+    <div class="photo">Фото 3</div>
+</section>
+
+<section class="actions">
+    <a href="booking.html">
+        <button class="main-btn">Забронировать со скидкой 5%</button>
+    </a>
+    <button class="main-btn secondary" id="contactsBtn">Контакты</button>
+</section>
+
+<section id="contacts" class="contacts">
+    <p>📞 +7 918 058-04-05</p>
+    <p>💬 WhatsApp / Telegram</p>
+</section>
+
+<script>
+document.getElementById('contactsBtn').onclick = () => {
+    const c = document.getElementById('contacts');
+    c.classList.toggle('show');
+};
+</script>
+
+</body>
+</html>
