@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Бронирование Место силы</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Бронирование Место силы</h1>
+</header>
+
+<main>
+  <section id="calendarWrapper">
+    <div id="monthName" class="month-name"></div>
+    <div id="calendar" class="calendar"></div>
+  </section>
+
+  <section class="form">
+    <label>
+      Количество человек:
+      <select id="peopleSelect">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </label>
+
+    <label>
+      Ваше имя:
+      <input type="text" id="booking-name" placeholder="Введите имя">
+    </label>
+
+    <label>
+      Телефон:
+      <input type="tel" id="booking-phone" placeholder="Введите телефон">
+    </label>
+
+    <div id="price">Цена: —</div>
+
+    <button id="booking-btn" class="btn-primary">Забронировать</button>
+    <p id="booking-message" class="booking-message" style="display:none;"></p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
