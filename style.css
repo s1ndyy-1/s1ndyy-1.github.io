@@ -1,0 +1,236 @@
+/* ---------------------------
+   Общие стили
+--------------------------- */
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f1eb;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #6b4f32;
+    margin-bottom: 20px;
+}
+
+/* ---------------------------
+   Галерея
+--------------------------- */
+.gallery {
+    display: flex;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.photo {
+    flex: 1;
+    height: 260px;
+    background: #e0d2bf;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b4f32;
+}
+
+/* ---------------------------
+   Кнопки
+--------------------------- */
+.main-btn {
+    background: linear-gradient(135deg,#c69a6a,#8b5e3c);
+    color: white;
+    padding: 14px 26px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0,0,0,.3);
+}
+
+.main-btn.secondary {
+    background: linear-gradient(135deg,#7b6a58,#5a4634);
+}
+
+/* ---------------------------
+   Контакты
+--------------------------- */
+.contacts {
+    text-align: center;
+    display: none;
+    margin-top: 10px;
+}
+.contacts.show {
+    display: block;
+}
+
+/* ---------------------------
+   Календарь
+--------------------------- */
+#calendarWrapper {
+    max-width: 420px;
+    margin: 0 auto 20px;
+    background: white;
+    padding: 16px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+#monthName {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #6b4f32;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 6px;
+}
+
+.date {
+    background: #e6d8c6;
+    padding: 14px 0;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.date:hover:not(.booked) {
+    background: #d1bca0;
+}
+
+.date.booked {
+    background: repeating-linear-gradient(
+        45deg,#bfbfbf,#bfbfbf 6px,#cfcfcf 6px,#cfcfcf 12px
+    );
+    cursor: default;
+}
+
+.date.selected {
+    background: #6b4f32;
+    color: white;
+}
+
+/* Пустые ячейки перед первым днем месяца */
+.empty {
+    background: transparent;
+    cursor: default;
+}
+
+/* ---------------------------
+   Форма брони
+--------------------------- */
+.form {
+    max-width: 420px;
+    margin: 0 auto;
+    background: #fff6ed;
+    padding: 16px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+.form label {
+    display: block;
+    margin: 10px 0 4px;
+    font-weight: 500;
+    color: #6b4f32;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #c69a6a;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#price {
+    font-weight: 600;
+    margin: 10px 0;
+    color: #6b4f32;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg,#c69a6a,#8b5e3c);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+.booking-message {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #6b4f32;
+}
+
+/* ---------------------------
+   Админка
+--------------------------- */
+.admin-panel {
+    background: #fff6ed;
+    border: 2px solid #c69a6a;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 12px auto;
+    max-width: 400px;
+}
+
+.admin-panel.hidden {
+    display: none;
+}
+
+.admin-panel h3 {
+    color: #6b4f32;
+    margin-bottom: 8px;
+}
+
+#admin-info p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #6b4f32;
+}
+
+/* ---------------------------
+   Адаптив
+--------------------------- */
+@media (max-width: 480px) {
+    .gallery {
+        flex-direction: column;
+    }
+    .photo {
+        height: 180px;
+    }
+    #calendarWrapper, .form {
+        width: 95%;
+        padding: 12px;
+    }
+    .date {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+}
